@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "MESS",
+  "display": "standalone",
+  "name": "MESS",
+  "short_name": "MESS",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
