@@ -3,21 +3,28 @@ namespace MESS.UITests;
 public class Given_MainPage : TestBase
 {
     [Test]
-    public async Task When_SmokeTest()
+    public async Task When_HamburgerMenuNavigation()
     {
-        // NOTICE
-        // To run UITests, Run the WASM target without debugger. Note
-        // the port that is being used and update the Constants.cs file
-        // in the UITests project with the correct port number.
-
-        // Add delay to allow for the splash screen to disappear
         await Task.Delay(5000);
+        App.WaitForElement("LoginViewTitle");
 
-        // Query for the MainPage Text Block
-        Query textBlock = q => q.All().Marked("HelloTextBlock");
-        App.WaitForElement(textBlock);
+        NavigateTo("Production", "ProductionViewTitle");
+        NavigateTo("Instructions", "InstructionsViewTitle");
+        NavigateTo("Users", "UsersViewTitle");
+        NavigateTo("Products", "ProductsViewTitle");
+        NavigateTo("Parts", "PartsViewTitle");
+        NavigateTo("Defects", "DefectsViewTitle");
+        NavigateTo("Orders", "OrdersViewTitle");
+        NavigateTo("Settings", "SettingsViewTitle");
 
-        // Take a screenshot and add it to the test results
-        TakeScreenshot("After launch");
+        TakeScreenshot("After menu navigation");
+    }
+
+    private void NavigateTo(string menuItem, string expectedViewTitle)
+    {
+        App.Tap("MainMenuButton");
+        App.WaitForElement(menuItem);
+        App.Tap(menuItem);
+        App.WaitForElement(expectedViewTitle);
     }
 }
