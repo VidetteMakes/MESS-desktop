@@ -3,7 +3,7 @@ namespace MESS.UITests;
 public class Given_MainPage : TestBase
 {
     [Test]
-    public async Task When_HamburgerMenuNavigation()
+    public async Task When_NavigationViewNavigation()
     {
         await Task.Delay(5000);
         App.WaitForElement("LoginViewTitle");
@@ -22,7 +22,6 @@ public class Given_MainPage : TestBase
 
     private void NavigateTo(string menuItem, string expectedViewTitle)
     {
-        App.Tap("MainMenuButton");
         App.WaitForElement(menuItem);
         App.Tap(menuItem);
         App.WaitForElement(expectedViewTitle);
