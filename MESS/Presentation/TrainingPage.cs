@@ -44,12 +44,18 @@ public sealed partial class TrainingPage : Page
             }
         };
 
-        // Top row: a rich text box with a single line of text.
-        var title = new RichEditBox
+        // Top row: a text block displaying the title. A TextBlock supports rich
+        // text through its Inlines collection but is not user editable, and is
+        // implemented on all targeted platforms (unlike RichEditBox /
+        // RichTextBlock, which are not fully supported by Uno).
+        var title = new TextBlock
         {
-            Margin = new Thickness(8)
+            Margin = new Thickness(8),
+            Inlines =
+            {
+                new Microsoft.UI.Xaml.Documents.Run { Text = "Training Matrix" }
+            }
         };
-        title.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, "Training Matrix");
         Grid.SetRow(title, 0);
         grid.Children.Add(title);
 
