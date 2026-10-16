@@ -19,6 +19,7 @@ public sealed partial class MainPage : Page
     [
         "Production",
         "Instructions",
+        "Training",
         "Users",
         "Products",
         "Parts",
@@ -38,6 +39,7 @@ public sealed partial class MainPage : Page
 	{
 		["Production"] = Symbol.Play,
 		["Instructions"] = Symbol.Document,
+		["Training"] = Symbol.Admin,
 		["Users"] = Symbol.People,
 		["Products"] = Symbol.Shop,
 		["Parts"] = Symbol.Library,
@@ -52,6 +54,7 @@ public sealed partial class MainPage : Page
     {
         ["Production"] = typeof(ProductionPage),
         ["Instructions"] = typeof(InstructionsPage),
+        ["Training"] = typeof(TrainingPage),
         ["Users"] = typeof(UsersPage),
         ["Products"] = typeof(ProductsPage),
         ["Parts"] = typeof(PartsPage),
